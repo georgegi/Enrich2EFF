@@ -1,0 +1,3 @@
+print '"ID","Firstname","LastName","EmailAddress","Street","City","State","ZipCode","HomePhoneNumber","WorkPhoneNumber","CellPhoneNumber"'
+select '"'+convert(varchar(100),ID)+'","'+convert(varchar(100),Firstname)+'","'+convert(varchar(100),LastName)+'","'+convert(varchar(100),EmailAddress)+'","'+convert(varchar(100),Street)+'","'+convert(varchar(100),City)+'","'+convert(varchar(100),State)+'","'+convert(varchar(100),ZipCode)+'","'+convert(varchar(100),HomePhoneNumber)+'","'+convert(varchar(100),WorkPhoneNumber)+'","'+convert(varchar(100),CellPhoneNumber)+'"'
+from x_DATATEAM.Extract_SIS_Guardians
