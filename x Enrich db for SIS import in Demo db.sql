@@ -369,6 +369,15 @@ from ClassRoster cr
 join StudentClassRosterHistory scrh on cr.ID = scrh.ClassRosterID
 join Student s on scrh.StudentID = s.ID
 where StartDate >= '7/1/2013' -- 183044
+and cr.ID = (
+	select top 1 crx.ID
+	from ClassRoster crx
+	join StudentClassRosterHistory scrhx on crx.ID = scrhx.ClassRosterID
+	where scrh.StudentID = scrhx.StudentID
+	and cr.CourseCode = crx.CourseCode
+	and scrh.StartDate = scrhx.StartDate
+	order by crx.SectionName desc
+)
 go
 
 --select top 100 * from ClassRoster 
